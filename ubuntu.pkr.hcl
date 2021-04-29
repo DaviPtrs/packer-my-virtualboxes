@@ -44,4 +44,12 @@ source "virtualbox-ovf" "virtualbox" {
 build {
   sources = ["source.virtualbox-ovf.virtualbox"]
 
+  # Enonic
+  provisioner "ansible" {
+    playbook_file = "/home/davi/repos/leanon-devops/enonic-project-remote/enonic.yml"
+    inventory_file = "/home/davi/repos/leanon-devops/enonic-project-remote/inventory.ini"
+    user = "ubuntu"
+    local_port = 2222
+  }
+  
 }
